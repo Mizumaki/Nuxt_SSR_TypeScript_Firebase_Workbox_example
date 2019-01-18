@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <h2> </h2>
+    <h2>f</h2>
     <img :src="'https://robohash.org/' + person.first_name + '_' + person.last_name" />
   </div>
 </template>

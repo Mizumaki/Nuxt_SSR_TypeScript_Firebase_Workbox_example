@@ -1,36 +1,20 @@
-import parseArgs from "minimist";
+const forFirebase = process.env.FIREBASE ? true : false;
 
-const argv = parseArgs(process.argv.slice(2), {
-  alias: {
-    H: "hostname",
-    p: "port"
-  },
-  string: ["H"],
-  unknown: parameter => false
-})
+const baseUrl = forFirebase ? 'https://test-e4fed.firebaseapp.com' : 'http://localhost:8080';
 
-const port =
-  argv.port ||
-  process.env.PORT ||
-  process.env.npm_package_config_nuxt_port ||
-  "3000"
-const host =
-  argv.hostname ||
-  process.env.HOST ||
-  process.env.npm_package_config_nuxt_host ||
-  "localhost"
-
-export default {
+module.exports = {
   // srcDir を指定することでサーバーを切り出すことが可能に
   // https://ja.nuxtjs.org/api/configuration-srcdir
   srcDir: 'src',
   // https://ja.nuxtjs.org/api/configuration-builddir
-  buildDir: './.nuxt',
-  env: {
-    baseUrl:
-      process.env.BASE_URL ||
-      `http://${host}:${port}`
+  // buildDir: './functions/dist/nuxt',
+  /*
+  build: {
+    publicPath: '/assets/',
+    // extractCSS: true,
   },
+  modulesDir: ['./node_modules'],
+  */
   head: {
     title: "tt1",
     meta: [
@@ -66,5 +50,7 @@ export default {
     "@nuxtjs/axios",
     "~/modules/typescript.js"
   ],
-  axios: {}
+  axios: {
+    baseURL: baseUrl
+  }
 }

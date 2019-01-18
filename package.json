@@ -2,9 +2,23 @@
   "name": "nuxt-community-typescript",
   "version": "2.3.4",
   "private": true,
+  "config": {
+    "functionsDist": "functions/dist",
+    "hostingDist": "functions/dist/app"
+  },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build && cp -R .nuxt/dist functions",
+    "setup": "npm run clean && npm run copynuxt && npm run copystatic",
+    "clean": "rm -rf public/*",
+    "copynuxt": "cp -R .nuxt functions/dist/",
+    "copystatic": "cp -R src/static/* public && cp -R .nuxt/dist public/assets",
+    "build": "npm run build:nuxt && npm run build:functions",
+    "build:nuxt": "nuxt build",
+    "build:functions": "./functions/node_modules/.bin/tsc --project ./functions --outDir $npm_package_config_functionsDist",
+    "deploy": "FIREBASE=true nuxt build && npm run setup && npm run deploy:hosting && npm run deploy:functions",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "deploy:functions": "firebase deploy --only functions",
+    "functions": "npm run build:functions && npm run deploy:functions",
     "start": "nuxt start"
   },
   "dependencies": {
