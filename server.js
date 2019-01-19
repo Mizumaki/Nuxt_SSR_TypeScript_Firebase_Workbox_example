@@ -3,12 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // const functions = require("firebase-functions");
 const express = require("express");
 const nuxt_1 = require("nuxt");
-const url = require("url");
 const app = express();
 
-const nuxtConfig = require('./nuxt.config');
-const serverUrl = url.parse(nuxtConfig.axios.baseURL);
-const port = serverUrl.port;
+const port = 8080;
 
 const config = {
   dev: false,
@@ -25,12 +22,6 @@ function handleRequest(req, res) {
     resolve(nuxt.render(req, res));
   });
 }
-
-app.get('/random-data.json', (_, res) => {
-  console.log('im in')
-  const json = require('./src/static/random-data.json');
-  res.send(JSON.stringify(json));
-});
 
 app.use(handleRequest);
 

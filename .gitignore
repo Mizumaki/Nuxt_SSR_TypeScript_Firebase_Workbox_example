@@ -3,9 +3,9 @@ node_modules/
 
 # production
 dist/
-functions/lib/
 .firebase/
 .nuxt/
+public/assets
 
 # misc
 .DS_Store

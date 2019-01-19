@@ -1,6 +1,3 @@
-const forFirebase = process.env.FIREBASE ? true : false;
-
-const baseUrl = forFirebase ? 'https://test-e4fed.firebaseapp.com' : 'http://localhost:8080';
 
 module.exports = {
   // srcDir を指定することでサーバーを切り出すことが可能に
@@ -8,13 +5,10 @@ module.exports = {
   srcDir: 'src',
   // https://ja.nuxtjs.org/api/configuration-builddir
   // buildDir: './functions/dist/nuxt',
-  /*
   build: {
     publicPath: '/assets/',
-    // extractCSS: true,
+    extractCSS: true,
   },
-  modulesDir: ['./node_modules'],
-  */
   head: {
     title: "tt1",
     meta: [
@@ -47,10 +41,6 @@ module.exports = {
   */
   css: ["~/assets/css/main.css"],
   modules: [
-    "@nuxtjs/axios",
     "~/modules/typescript.js"
   ],
-  axios: {
-    baseURL: baseUrl
-  }
 }

@@ -15,19 +15,20 @@
     "build": "npm run build:nuxt && npm run build:functions",
     "build:nuxt": "nuxt build",
     "build:functions": "./functions/node_modules/.bin/tsc --project ./functions --outDir $npm_package_config_functionsDist",
-    "deploy": "FIREBASE=true nuxt build && npm run setup && npm run deploy:hosting && npm run deploy:functions",
+    "deploy": "npm run setup && npm run deploy:hosting && npm run deploy:functions",
     "deploy:hosting": "firebase deploy --only hosting",
     "deploy:functions": "firebase deploy --only functions",
     "functions": "npm run build:functions && npm run deploy:functions",
     "start": "nuxt start"
   },
   "dependencies": {
-    "@nuxtjs/axios": "5.3.6",
     "nuxt": "2.3.4",
     "nuxt-property-decorator": "1.3.1",
     "vuex-class": "0.3.1"
   },
   "devDependencies": {
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "ts-loader": "5.3.3",
     "typescript": "3.2.2"
   }

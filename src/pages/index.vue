@@ -1,42 +1,20 @@
 <template>
-  <section>
-    <h1 class="header">Nuxt TypeScript Starter</h1>
-    <div class="cards">
-      <Card
-        v-for="person in people"
-        :key="person.id"
-        :person="person"
-      ></Card>
-    </div>
-  </section>
+  <div class="home">
+    <img alt="Vue logo" src="../assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  </div>
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Vue
-} from "nuxt-property-decorator"
-import { State } from "vuex-class"
-import { Person } from "~/types";
-import Card from "~/components/Card.vue"
+import { Component,　Vue } from "nuxt-property-decorator"
+// import { State } from "vuex-class"
+//import { Person } from "~/types";
+import HelloWorld from '~/components/HelloWorld.vue';
 
 @Component({
   components: {
-    Card
+    HelloWorld,
   }
 })
-export default class extends Vue {
-  @State people: Person
-}
+export default class extends Vue {}
 </script>
-
-<style scoped>
-.header {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-}
-</style>
