@@ -17,6 +17,7 @@
     "deploy": "npm run setup && npm run deploy:hosting && npm run deploy:functions",
     "deploy:hosting": "firebase deploy --only hosting",
     "deploy:functions": "firebase deploy --only functions",
+    "serve:pro": "node server.js",
     "functions": "npm run build:functions && npm run deploy:functions",
     "start": "nuxt start"
   },
