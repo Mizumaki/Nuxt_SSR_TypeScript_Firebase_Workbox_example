@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-// const functions = require("firebase-functions");
 const express = require("express");
 const nuxt_1 = require("nuxt");
 const app = express();

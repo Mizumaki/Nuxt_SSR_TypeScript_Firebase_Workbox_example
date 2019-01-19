@@ -10,18 +10,16 @@ module.exports = {
     extractCSS: true,
   },
   head: {
-    title: "tt1",
+    title: "stathaming",
     meta: [
       { charset: "utf-8" },
       {
         name: "viewport",
-        content:
-          "width=device-width, initial-scale=1"
+        content: "width=device-width, initial-scale=1"
       },
       {
-        hid: "description",
-        name: "description",
-        content: "Nuxt.js project"
+        'http-equiv': "X-UA-Compatible",
+        content: "IE=edge"
       }
     ],
     link: [
