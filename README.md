@@ -3,6 +3,8 @@ This is a sample App built by Nuxt. You can run this app on both localhost and W
 
 If you want to run this app in the real world, use Firebase. All settings is included in this sample.
 
+The same app using Vue CLI3 instead of Nuxt.js is [here](https://github.com/Mizumaki/VueCLI3_SSR_TypeScript_Firebase_Workbox_example).
+
 ## Usage
 Install dependencies in root directory and functions directory:
 
