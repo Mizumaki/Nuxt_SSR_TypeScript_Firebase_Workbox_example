@@ -39,6 +39,10 @@ module.exports = {
   */
   css: ["~/assets/css/main.css"],
   modules: [
-    "~/modules/typescript.js"
+    "~/modules/typescript.js",
+    '@nuxtjs/pwa'
   ],
+  // 特に設定しなくても、自動でよしなにキャッシュしてくれる
+  // https://pwa.nuxtjs.org/modules/workbox#adding-custom-runtimecaching-items-for-cdn
+  workbox: {}
 }

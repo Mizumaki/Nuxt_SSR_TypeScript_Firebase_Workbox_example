@@ -1,5 +1,6 @@
 const express = require("express");
 const nuxt_1 = require("nuxt");
+const path = require('path');
 const app = express();
 
 const port = 8080;
@@ -20,6 +21,12 @@ function handleRequest(req, res) {
   });
 }
 
+const resolve = file => path.resolve(__dirname, file);
+const serve = (filePath) => express.static(resolve(filePath));
+
+// nuxt.config.jsでpulicPathを設定しているため
+app.use('/assets', serve('./.nuxt/dist/client'));
+
 app.use(handleRequest);
 
 app.listen(port, () => {
@@ -30,10 +37,3 @@ app.listen(port, () => {
   console.log("");
   console.log("");
 });
-
-/*
-const ssr = functions.https.onRequest(app);
-exports.ssr = ssr;
-//# sourceMappingURL=index.js.map
-
-*/
