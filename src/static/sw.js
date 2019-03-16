@@ -6,10 +6,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "b0a7037cf15a80d153d3121f334895d4"
   },
   {
-    "url": "/assets/155026812a360ed8ad2b.js",
-    "revision": "02183aba7778809f295d42d7ae699f5c"
-  },
-  {
     "url": "/assets/17d7caeba92dae9ec3d6.js",
     "revision": "8e75411076848bc6dd025c9bdffbb480"
   },
@@ -26,7 +22,7 @@ workbox.precaching.precacheAndRoute([
     "revision": "bd4e5463dc3692122848c46dbce7da91"
   },
   {
-    "url": "/assets/6a54692944df56f39537.js",
+    "url": "/assets/8ed76c8f738964e8afda.js",
     "revision": "2b5e60776c841947c55ad07d176fd107"
   },
   {
@@ -34,8 +30,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "2ec9e71f8c21b1992125b04c9250094f"
   },
   {
-    "url": "/assets/db8a6affe58fbd0fb9f4.js",
-    "revision": "add46ef5943b38a34fe58fa37bca1efc"
+    "url": "/assets/c05a51fb148198ffbb42.js",
+    "revision": "a7cdfebb12240126677bf5732c220bdd"
+  },
+  {
+    "url": "/assets/cb81b8d2ab52c55e2167.js",
+    "revision": "b064fa5d7d570833509f1d94bfd41515"
   }
 ], {
   "cacheId": "nuxt-community-typescript",

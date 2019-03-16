@@ -12,7 +12,7 @@
     "copynuxt": "cp -R .nuxt functions/dist/",
     "copystatic": "cp -R src/static/* public && cp -R .nuxt/dist public/assets",
     "build": "npm run build:nuxt && npm run build:functions",
-    "build:nuxt": "nuxt build",
+    "build:nuxt": "nuxt build && cp -r ./src/static/* ./.nuxt/dist/client",
     "build:functions": "./functions/node_modules/.bin/tsc --project ./functions --outDir $npm_package_config_functionsDist",
     "deploy": "npm run setup && npm run deploy:hosting && npm run deploy:functions",
     "deploy:hosting": "firebase deploy --only hosting",

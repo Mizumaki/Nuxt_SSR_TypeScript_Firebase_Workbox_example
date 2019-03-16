@@ -27,6 +27,10 @@ const serve = (filePath) => express.static(resolve(filePath));
 // nuxt.config.jsでpulicPathを設定しているため
 app.use('/assets', serve('./.nuxt/dist/client'));
 
+app.use('/sw.js', serve('./.nuxt/dist/client/sw.js'));
+
+app.use('/favicon.ico', serve('./.nuxt/dist/client/favicon.ico'));
+
 app.use(handleRequest);
 
 app.listen(port, () => {

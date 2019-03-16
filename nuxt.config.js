@@ -26,7 +26,7 @@ module.exports = {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/favicon.ico"
+        href: "favicon.ico?v=3" // https://github.com/nuxt/nuxt.js/issues/1204#h5o-16
       }
     ]
   },
